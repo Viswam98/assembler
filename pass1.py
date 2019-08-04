@@ -45,8 +45,12 @@ def pass1():
 			locctr+=(3*int(operand))
 		elif opcode == 'RESB':
 			locctr+=int(operand)
-		#elif opcode == 'BYTE':
-		#	locctr+=(#length of constant in bytes)
+		'''syntax : LABEL BYTE NUM : 
+			means reserve NUM bytes to LABEL
+			find length of generated hex constant
+			occupying as many bytes as needed.'''
+		elif opcode == 'BYTE':
+			locctr += len(opcode)
 		else:
 			print("Error!!! Invalid	 operation code")
 		
@@ -59,6 +63,7 @@ def pass1():
 	#write last line to intermediate file
 	
 	program_length = locctr - starting_addr
+	
 def find(value,fileName):
 	ft = open(fileName,"r")
 	for i in ft:
