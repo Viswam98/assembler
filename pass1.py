@@ -32,7 +32,7 @@ def pass1():
 			f3.write(i)
 			break
 		if label != "\t":
-			if !find(label,"symtab.txt") :   #complete
+			if not find(label,"symtab.txt") :   #complete
 				#insert(label,locctr,symtab) #insert label and locctr to symtab
 				f4.write(label+"\t"+locctr)
 			else:
